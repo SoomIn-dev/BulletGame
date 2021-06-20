@@ -6,8 +6,13 @@ class Bullet:
         self.pos = [x, y]
         self.to = [to_x, to_y]
         self.radius = 8
-        self.color = (190, 0, 0)
         self.type = type_text
+        if self.type == "polygon":
+            self.color = (0, 0, 190)
+        elif self.type == "rect":
+            self.color = (0, 190, 0)
+        else:
+            self.color = (190, 0, 0)
 
     def update_and_draw(self, dt, screen):
         width, height = screen.get_size()
